@@ -3,7 +3,7 @@ const Dev = require('../models/Dev');
 module.exports = {
    async store(req, res)
     {
-        const { user } = req.headers; //busco essa informação passada pelo HEADER
+        const { user } = req.headers;
         const { targetDev } = req.params;
 
         const devLogado = await Dev.findById(user); 
