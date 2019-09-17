@@ -14,12 +14,12 @@ module.exports = {
             return res.status(400).json({erro: 'Usuário não existe'});
         }
 
-        if(devTarget.likes.includes(devLogado._id))
+        if(devTarget.dislikes.includes(devLogado._id))
         {
             console.log("DeuMatch!!!");
         }
 
-        devLogado.likes.push(devTarget._id);
+        devLogado.dislikes.push(devTarget._id);
         await devLogado.save();
 
         return res.json(devLogado);
